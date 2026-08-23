@@ -483,17 +483,36 @@ data-aos="fade-up">
 
         </div>
 
-        <form class="contact-form">
+        <form class="contact-form" id="contactForm">
 
-            <input type="text" placeholder="Your Name">
+            <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+            >
 
-            <input type="email" placeholder="Your Email">
+            <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+            >
+
+            <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+            >
 
             <textarea
+                name="message"
                 rows="6"
-                placeholder="Tell me about your project..."></textarea>
+                placeholder="Tell me about your project..."
+                required
+            ></textarea>
 
-            <button class="primary-btn">
+            <button type="submit" class="primary-btn">
                 Send Message
             </button>
 
