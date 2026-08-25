@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Atharv Kanade</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <h2>ATHARV</h2>
+            <span>ADMIN PANEL</span>
+        </div>
+
+        <nav>
+
+            <button class="nav-item active" data-section="overview">
+                📊 Dashboard
+            </button>
+
+            <button class="nav-item" data-section="messages">
+                💬 Messages
+            </button>
+
+            <button class="nav-item" data-section="projects">
+                🚀 Projects
+            </button>
+
+            <button class="nav-item" data-section="skills">
+                🛠️ Skills
+            </button>
+
+            <button class="nav-item" data-section="experience">
+                💼 Experience
+            </button>
+
+            <button class="nav-item" data-section="education">
+                🎓 Education
+            </button>
+
+            <button class="nav-item" data-section="visitors">
+                👁️ Visitors
+            </button>
+
+        </nav>
+
+        <button id="logoutBtn" class="logout-btn">
+            🚪 Logout
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div>
+                <h1 id="pageTitle">Dashboard</h1>
+                <p id="welcomeText">
+                    Welcome back, Admin
+                </p>
+            </div>
+
+            <div class="admin-profile">
+                <div class="avatar">
+                    A
+                </div>
+
+                <div>
+                    <strong id="adminUsername">
+                        Admin
+                    </strong>
+
+                    <small>
+                        Administrator
+                    </small>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- OVERVIEW -->
+        <section id="overview" class="section active">
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <span>👁️</span>
+                    <p>Visitors Today</p>
+                    <h2 id="visitorsToday">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>📅</span>
+                    <p>This Month</p>
+                    <h2 id="visitorsMonth">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>📆</span>
+                    <p>This Year</p>
+                    <h2 id="visitorsYear">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>👥</span>
+                    <p>Total Visitors</p>
+                    <h2 id="visitorsTotal">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>💬</span>
+                    <p>Messages</p>
+                    <h2 id="totalContacts">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>🚀</span>
+                    <p>Projects</p>
+                    <h2 id="totalProjects">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>🛠️</span>
+                    <p>Skills</p>
+                    <h2 id="totalSkills">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>💼</span>
+                    <p>Experience</p>
+                    <h2 id="totalExperience">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-grid">
+
+                <div class="panel">
+
+                    <div class="panel-header">
+                        <h2>Visitor Analytics</h2>
+
+                        <select id="visitorPeriod">
+                            <option value="daily">Daily</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="yearly">Yearly</option>
+                        </select>
+                    </div>
+
+                    <div class="chart-placeholder">
+                        <div id="visitorChart">
+                            Visitor chart will appear here
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <div class="panel-header">
+                        <h2>Quick Overview</h2>
+                    </div>
+
+                    <div class="quick-list">
+
+                        <div>
+                            <span>🎓 Education</span>
+                            <strong id="totalEducation">0</strong>
+                        </div>
+
+                        <div>
+                            <span>💬 Messages</span>
+                            <strong id="quickMessages">0</strong>
+                        </div>
+
+                        <div>
+                            <span>🚀 Projects</span>
+                            <strong id="quickProjects">0</strong>
+                        </div>
+
+                        <div>
+                            <span>👁️ Visitors</span>
+                            <strong id="quickVisitors">0</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MESSAGES -->
+        <section id="messages" class="section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Messages</h2>
+                    <p>Messages received from your portfolio.</p>
+                </div>
+
+            </div>
+
+            <div id="messagesContainer" class="content-container">
+                Loading messages...
+            </div>
+
+        </section>
+
+
+        <!-- PROJECTS -->
+        <section id="projects" class="section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Projects</h2>
+                    <p>Manage your portfolio projects.</p>
+                </div>
+
+                <button class="primary-btn">
+                    + Add Project
+                </button>
+
+            </div>
+
+            <div id="projectsContainer" class="content-container">
+                Loading projects...
+            </div>
+
+        </section>
+
+
+        <!-- SKILLS -->
+        <section id="skills" class="section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Skills</h2>
+                    <p>Manage your technical skills.</p>
+                </div>
+
+                <button class="primary-btn">
+                    + Add Skill
+                </button>
+
+            </div>
+
+            <div id="skillsContainer" class="content-container">
+                Loading skills...
+            </div>
+
+        </section>
+
+
+        <!-- EXPERIENCE -->
+        <section id="experience" class="section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Experience</h2>
+                    <p>Manage your professional experience.</p>
+                </div>
+
+                <button class="primary-btn">
+                    + Add Experience
+                </button>
+
+            </div>
+
+            <div id="experienceContainer" class="content-container">
+                Loading experience...
+            </div>
+
+        </section>
+
+
+        <!-- EDUCATION -->
+        <section id="education" class="section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Education</h2>
+                    <p>Manage your education information.</p>
+                </div>
+
+                <button class="primary-btn">
+                    + Add Education
+                </button>
+
+            </div>
+
+            <div id="educationContainer" class="content-container">
+                Loading education...
+            </div>
+
+        </section>
+
+
+        <!-- VISITORS -->
+        <section id="visitors" class="section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Visitor Analytics</h2>
+                    <p>Monitor visitors to your portfolio.</p>
+                </div>
+
+            </div>
+
+            <div class="visitor-summary">
+
+                <div class="visitor-card">
+                    <span>Today</span>
+                    <strong id="visitorPageToday">0</strong>
+                </div>
+
+                <div class="visitor-card">
+                    <span>This Month</span>
+                    <strong id="visitorPageMonth">0</strong>
+                </div>
+
+                <div class="visitor-card">
+                    <span>This Year</span>
+                    <strong id="visitorPageYear">0</strong>
+                </div>
+
+                <div class="visitor-card">
+                    <span>Total</span>
+                    <strong id="visitorPageTotal">0</strong>
+                </div>
+
+            </div>
+
+            <div class="panel visitor-table-panel">
+
+                <h2>Recent Visitors</h2>
+
+                <div id="visitorTableContainer">
+                    Loading visitors...
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>

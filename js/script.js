@@ -425,3 +425,27 @@ if (contactForm) {
         }
     });
 }
+
+// ========================================
+// VISITOR ANALYTICS
+// ========================================
+
+async function trackVisitor() {
+    try {
+        await fetch("http://127.0.0.1:5000/api/visitors/track", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                page: window.location.pathname
+            })
+        });
+
+        console.log("Visitor tracked successfully.");
+    } catch (error) {
+        console.error("Visitor tracking failed:", error);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", trackVisitor);
