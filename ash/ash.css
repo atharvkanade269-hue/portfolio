@@ -1,0 +1,228 @@
+/* =========================================
+   ASH - Living Web Companion
+   Version 0.1
+   ========================================= */
+
+#ash-companion {
+    position: fixed;
+    left: 50%;
+    top: 70%;
+    width: 70px;
+    height: 90px;
+
+    z-index: 99999;
+    pointer-events: none;
+
+    transform: translate(-50%, -50%);
+
+    user-select: none;
+    will-change: transform, left, top;
+
+    font-family: Arial, sans-serif;
+}
+
+/* Ash's temporary body */
+.ash-body {
+    position: absolute;
+    left: 15px;
+    bottom: 0;
+
+    width: 40px;
+    height: 48px;
+
+    background: #222;
+    border-radius: 20px 20px 14px 14px;
+}
+
+/* Head */
+.ash-head {
+    position: absolute;
+    left: 12px;
+    top: 0;
+
+    width: 46px;
+    height: 46px;
+
+    background: #ffd6b3;
+    border-radius: 50%;
+
+    border: 3px solid #222;
+}
+
+/* Hair */
+.ash-hair {
+    position: absolute;
+    left: 14px;
+    top: -4px;
+
+    width: 42px;
+    height: 20px;
+
+    background: #222;
+
+    border-radius: 50% 50% 30% 30%;
+}
+
+/* Eyes */
+.ash-eye {
+    position: absolute;
+    top: 20px;
+
+    width: 6px;
+    height: 8px;
+
+    background: #111;
+    border-radius: 50%;
+}
+
+.ash-eye.left {
+    left: 11px;
+}
+
+.ash-eye.right {
+    right: 11px;
+}
+
+/* Little smile */
+.ash-mouth {
+    position: absolute;
+    left: 18px;
+    top: 31px;
+
+    width: 10px;
+    height: 5px;
+
+    border-bottom: 2px solid #111;
+    border-radius: 50%;
+}
+
+/* Legs */
+.ash-leg {
+    position: absolute;
+
+    bottom: -12px;
+
+    width: 9px;
+    height: 15px;
+
+    background: #222;
+    border-radius: 5px;
+}
+
+.ash-leg.left {
+    left: 20px;
+}
+
+.ash-leg.right {
+    right: 20px;
+}
+
+/* Arms */
+.ash-arm {
+    position: absolute;
+
+    top: 45px;
+
+    width: 9px;
+    height: 25px;
+
+    background: #222;
+    border-radius: 5px;
+}
+
+.ash-arm.left {
+    left: 5px;
+    transform: rotate(20deg);
+}
+
+.ash-arm.right {
+    right: 5px;
+    transform: rotate(-20deg);
+}
+
+/* Walking animation */
+#ash-companion.ash-walking .ash-leg.left {
+    animation: ash-leg-left 0.25s infinite alternate;
+}
+
+#ash-companion.ash-walking .ash-leg.right {
+    animation: ash-leg-right 0.25s infinite alternate;
+}
+
+@keyframes ash-leg-left {
+    from {
+        transform: rotate(20deg);
+    }
+
+    to {
+        transform: rotate(-20deg);
+    }
+}
+
+@keyframes ash-leg-right {
+    from {
+        transform: rotate(-20deg);
+    }
+
+    to {
+        transform: rotate(20deg);
+    }
+}
+
+/* Jump */
+#ash-companion.ash-jumping {
+    animation: ash-jump 0.7s ease-out;
+}
+
+@keyframes ash-jump {
+    0% {
+        margin-top: 0;
+    }
+
+    40% {
+        margin-top: -100px;
+    }
+
+    70% {
+        margin-top: -40px;
+    }
+
+    100% {
+        margin-top: 0;
+    }
+}
+
+/* Small shadow */
+.ash-shadow {
+    position: absolute;
+
+    left: 8px;
+    bottom: -20px;
+
+    width: 55px;
+    height: 10px;
+
+    background: rgba(0, 0, 0, 0.2);
+
+    border-radius: 50%;
+
+    filter: blur(3px);
+}
+
+/* Running */
+
+#ash-companion.ash-running {
+    animation: ash-run-bounce 0.18s infinite alternate;
+}
+
+@keyframes ash-run-bounce {
+
+    from {
+        margin-top: 0;
+    }
+
+    to {
+        margin-top: -6px;
+    }
+}
+
